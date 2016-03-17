@@ -1,10 +1,11 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
+       <%= image_tag @user.picture.url %>
+  <div class ="user_infomation"><span class="glyphicon glyphicon-user"></span>
+  <%= @user.name %></br>
+  <span class ="glyphicon glyphicon-envelope"></span>
+  <%= @user.email %></br>
+  <span class ="glyphicon glyphicon-phone"></span>
+  <%= @user.phone %></br>
+  </div>
 </div>
