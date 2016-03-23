@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   validates :phone, length: { minimum: 9, maximum: 12}, numericality: true
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   validate  :picture_size
+
+  enum role: [:normal, :admin,:manage_team,:manage_pitch]
  # Returns the hash digest of the given string.
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

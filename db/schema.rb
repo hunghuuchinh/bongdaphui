@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 20160317014906) do
     t.string   "name"
     t.string   "email"
     t.string   "phone"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.string   "password_digest"
     t.string   "remember_digest"
-    t.string   "role",            default: "normal"
+    t.integer  "role",            default: 0
     t.string   "picture"
   end
 
