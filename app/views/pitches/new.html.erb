@@ -1,0 +1,55 @@
+<% provide(:title, 'Pitch') %>
+<h1>Create Pitch</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@pitch, html: { multipart: true }) do |f| %>
+    <%= render 'shared/error_messages', object: f.object  %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :address %>
+      <%= f.text_field :address, class: 'form-control' %>
+
+       <%= f.label :phone %>
+      <%= f.text_field :phone, class: 'form-control' %>
+
+      <%= f.label :quantity %>
+      <%= f.text_field :quantity, placeholder: "must be integer",   class: 'form-control' %>
+
+      <%= f.label :rent_shoes, class: "checkbox inline" do %>
+        <%= f.check_box :rent_shoes %>
+        <span>Have rent shoes</span>
+      <% end %>
+      <%= f.label :rent_kit, class: "checkbox inline" do %>
+        <%= f.check_box :rent_kit %>
+        <span>Have rent  kit</span>
+      <% end %>
+       <%= f.label :rent_ball, class: "checkbox inline" do %>
+        <%= f.check_box :rent_ball %>
+        <span>Have rent  ball </span>
+      <% end %>
+       <%= f.label :have_lamp, class: "checkbox inline" do %>
+        <%= f.check_box :have_lamp %>
+        <span>Have Lamp in Night</span>
+      <% end %>
+      <%= f.label :county %>
+      <%= f.select :county, options_for_select([['Ba Dinh','Ba Dinh'], ['Hoan Kiem','Hoan Kiem'],['Tay Ho','Tay Ho'],['Long Bien','Long Bien'],['Cau Giay','Cau Giay'],['Dong Da','Dong Da'],['Hai Ba Trung','Hai Ba Trung'],['Hoang Mai','Hoang Mai'],['Thanh Xuan','Thanh Xuan'],['Ha Dong','Ha Dong'],['Bac Tu Liem', 'Bac Tu Liem'],['Nam Tu Liem','Nam Tu Liem']]) %>
+
+      <%= f.label :cost %>
+      <%= f.text_field :cost,placeholder: "viet nam dong unit", class: 'form-control' %>
+
+      <%= f.hidden_field :lat %>
+      <%= f.hidden_field :lng %>
+
+      <div id="googleMap" style="width:600px;height:500px;"></div>
+
+       <%= f.label :description %>
+      <%= f.text_field :description, class: 'form-control' %>
+
+      </br>
+
+      <%= f.submit "Create my pitch", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

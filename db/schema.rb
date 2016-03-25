@@ -11,7 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160317014906) do
+ActiveRecord::Schema.define(version: 20160323041807) do
+
+  create_table "pitches", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.integer  "quantity"
+    t.string   "images"
+    t.boolean  "rent_shoes"
+    t.boolean  "rent_ball"
+    t.boolean  "rent_kit"
+    t.boolean  "have_lamp"
+    t.integer  "cost"
+    t.float    "lat"
+    t.float    "lng"
+    t.string   "county"
+    t.float    "rating"
+    t.text     "description"
+    t.string   "phone"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "pitches", ["user_id", "created_at"], name: "index_pitches_on_user_id_and_created_at"
+  add_index "pitches", ["user_id"], name: "index_pitches_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
