@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160406062212) do
+ActiveRecord::Schema.define(version: 20160418100111) do
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "content"
+    t.string   "picture"
+    t.integer  "user_id"
+    t.integer  "status_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["status_id"], name: "index_comments_on_status_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "groups", force: :cascade do |t|
     t.string   "name"
@@ -44,6 +56,19 @@ ActiveRecord::Schema.define(version: 20160406062212) do
 
   add_index "pitches", ["user_id", "created_at"], name: "index_pitches_on_user_id_and_created_at"
   add_index "pitches", ["user_id"], name: "index_pitches_on_user_id"
+
+  create_table "statuses", force: :cascade do |t|
+    t.string   "content"
+    t.string   "picture"
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "statuses", ["group_id"], name: "index_statuses_on_group_id"
+  add_index "statuses", ["user_id", "created_at"], name: "index_statuses_on_user_id_and_created_at"
+  add_index "statuses", ["user_id"], name: "index_statuses_on_user_id"
 
   create_table "teams", force: :cascade do |t|
     t.string   "name"
