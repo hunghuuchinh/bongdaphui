@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160323041807) do
+ActiveRecord::Schema.define(version: 20160406062212) do
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "admin_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "pitches", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
     t.integer  "quantity"
-    t.string   "images"
+    t.string   "image"
     t.boolean  "rent_shoes"
     t.boolean  "rent_ball"
     t.boolean  "rent_kit"
@@ -36,6 +44,29 @@ ActiveRecord::Schema.define(version: 20160323041807) do
 
   add_index "pitches", ["user_id", "created_at"], name: "index_pitches_on_user_id_and_created_at"
   add_index "pitches", ["user_id"], name: "index_pitches_on_user_id"
+
+  create_table "teams", force: :cascade do |t|
+    t.string   "name"
+    t.string   "county"
+    t.string   "image"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "teams", ["user_id", "created_at"], name: "index_teams_on_user_id_and_created_at"
+  add_index "teams", ["user_id"], name: "index_teams_on_user_id"
+
+  create_table "user_groups", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "user_groups", ["group_id"], name: "index_user_groups_on_group_id"
+  add_index "user_groups", ["user_id"], name: "index_user_groups_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

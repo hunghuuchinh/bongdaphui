@@ -8,6 +8,12 @@ Rails.application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
   resources :users
   resources :pitches
+  resources :teams
+
+   resources :groups do
+    resource :user_groups
+    get "add_members" => "user_groups#show"
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -48,6 +48,10 @@
       <%= f.text_field :description, class: 'form-control' %>
 
       </br>
+       <p> Image </p>
+       <span class="image">
+       <%= f.file_field :image %>
+       </span>
 
       <%= f.submit "Create my pitch", class: "btn btn-primary" %>
     <% end %>

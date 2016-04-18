@@ -4,7 +4,7 @@ class CreatePitches < ActiveRecord::Migration
       t.string :name
       t.string :address
       t.integer :quantity
-      t.string :images
+      t.string :image
       t.boolean :rent_shoes
       t.boolean :rent_ball
       t.boolean :rent_kit

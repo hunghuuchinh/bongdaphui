@@ -1,0 +1,34 @@
+<% provide(:title, 'Team') %>
+<h1>Create Your Team</h1>
+
+<div class="row">
+  <div class="col-md-12 ">
+    <%= form_for(@team, html: { multipart: true }) do |f| %>
+    <%= render 'shared/error_messages', object: f.object  %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :county %>
+      <%= f.select :county, options_for_select([['Ba Dinh','Ba Dinh'], ['Hoan Kiem','Hoan Kiem'],['Tay Ho','Tay Ho'],['Long Bien','Long Bien'],['Cau Giay','Cau Giay'],['Dong Da','Dong Da'],['Hai Ba Trung','Hai Ba Trung'],['Hoang Mai','Hoang Mai'],['Thanh Xuan','Thanh Xuan'],['Ha Dong','Ha Dong'],['Bac Tu Liem', 'Bac Tu Liem'],['Nam Tu Liem','Nam Tu Liem']]) %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description, class: 'form-control' %>
+      </br>
+
+       <p> Image </p>
+       <span class="image">
+       <%= f.file_field :image %>
+       </span>
+
+      <%= f.submit "Create my team", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+<script type="text/javascript">
+  $('#micropost_picture').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+</script>

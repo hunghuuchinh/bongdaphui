@@ -1,0 +1,48 @@
+<% provide :title, @group.name %>
+<div class="row">
+  <aside class="col-md-2">
+    <section>
+      <h1>
+        Group:
+        <%= @group.name %>
+      </h1>
+      <h4>
+        Admin name:
+        <%= @admin.name %><br/>
+        Description:
+        <%= @group.description %><br/>
+      </h4>
+    </section>
+    <section>
+      <% if current_user == @admin %>
+        <%= link_to "Add Members", group_add_members_path(@group), class:"btn btn-success btn-sm" %>
+        <%= link_to "Edit Group", edit_group_path(@group), class:"btn btn-primary btn-sm" %>
+        <%= link_to "Delete Group", group_path(@group), method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-danger btn-sm" %>
+      <% else %>
+        <%= link_to "Leave this group", edit_group_path(@group, confirm: true), class:"btn btn-danger btn-sm" %>
+      <% end %>
+    </section>
+    <section class="group_info">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>User name</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: "user", collection: @group.users %>
+        </tbody>
+      </table>
+    </section>
+  </aside>
+  </div>
+
+<script type="text/javascript">
+  $('#status_picture').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+</script>

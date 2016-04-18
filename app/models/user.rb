@@ -1,6 +1,11 @@
 class User < ActiveRecord::Base
   attr_accessor :remember_token
   has_one :pitch, dependent: :destroy
+  has_one :team, dependent: :destroy
+  has_many :groups, through: :user_groups
+  has_many :user_groups, dependent: :destroy
+  has_one :admin_group, foreign_key: "admin_id"
+
   before_save   :downcase_email
   mount_uploader :picture, PictureUploader
   validates :name,  presence: true, length: { maximum: 50 }
