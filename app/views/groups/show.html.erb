@@ -36,7 +36,37 @@
       </table>
     </section>
   </aside>
-  </div>
+ <aside class="col-md-5">
+    <h3>Statuses Feed</h3>
+      <section class="micropost_form">
+        <%= form_for @group, html: {multipart: true} do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
+          <%= f.fields_for :statuses do |p| %>
+            <% if p.object.try(:content).present? %>
+              <% p.hidden_field :user_id, value: p.object.user_id %>
+              <% p.hidden_field :content, value: p.object.content %>
+              <% p.hidden_field :picture, value: p.object.picture %>
+            <% else%>
+              <div class="field">
+                <%= p.hidden_field :user_id, value: current_user.id %>
+                <%= p.text_area :content, placeholder: "Compose new status...", class: "form-control" %>
+                <span class="picture">
+                  <%= p.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+                </span>
+              </div>
+            <% end %>
+          <% end %>
+          <%= f.submit "Post", class: "btn btn-primary" %>
+        <% end %>
+      </section>
+      <ol class="statuses">
+        <% @statuses.each do |status| %>
+          <%= render 'statuses/status', status: status %>
+        <% end %>
+      </ol>
+  </aside>
+</div>
+<%= subscribe_to "/comments/new" %>
 
 <script type="text/javascript">
   $('#status_picture').bind('change', function() {

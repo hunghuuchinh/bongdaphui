@@ -27,6 +27,8 @@ gem 'rails_admin'
 gem "cancancan"
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'acts_as_votable', '~> 0.10.0'
+gem 'public_activity'
 
 
 
