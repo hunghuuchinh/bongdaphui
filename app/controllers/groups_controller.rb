@@ -13,6 +13,13 @@ class GroupsController < ApplicationController
 
   def show
     @admin = @group.admin
+    @group.statuses.build
+    @statuses = []
+    @group.users.each do|user|
+      user.statuses.status_in_group(@group.id).each do |status|
+        @statuses << status
+      end
+    end
   end
 
     def create
@@ -48,7 +55,8 @@ class GroupsController < ApplicationController
 
    def group_params
     params.require(:group).permit :name, :description, :admin_id, user_ids: [],
-      user_groups_attributes: [:id, :user_id, :group_id]
+      user_groups_attributes: [:id, :user_id, :group_id],
+      statuses_attributes: [:id, :group_id, :user_id, :content, :picture]
 
   end
 

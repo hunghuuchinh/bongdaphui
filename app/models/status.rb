@@ -18,6 +18,8 @@ class Status < ActiveRecord::Base
 
   acts_as_votable
 
+  scope :status_in_group, ->(group_id){where group_id: group_id}
+
   def name
     content.split(//).first(30).join
   end
