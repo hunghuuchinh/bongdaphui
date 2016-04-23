@@ -8,9 +8,9 @@ class Comment < ActiveRecord::Base
   validates :content, presence: true, length: {maximum: 140}
   validate  :picture_size
 
-  default_scope -> {order(created_at: :desc)}
+  default_scope -> {order(created_at: :asc)}
 
-  acts_as_votable
+  #acts_as_votable
 
   def name
     content.split(//).first(30).join

@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   has_many :groups, through: :user_groups
   has_many :user_groups, dependent: :destroy
   has_one :admin_group, foreign_key: "admin_id"
+  has_many :statuses, dependent: :destroy
+  has_many :comments
+  acts_as_voter
 
   before_save   :downcase_email
   mount_uploader :picture, PictureUploader

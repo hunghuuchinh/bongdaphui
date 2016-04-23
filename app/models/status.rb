@@ -16,7 +16,7 @@ class Status < ActiveRecord::Base
   validates :content, presence: true, length: {maximum: 2000}
   validate  :picture_size
 
-  acts_as_votable
+   # acts_as_votable
 
   scope :status_in_group, ->(group_id){where group_id: group_id}
 

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :pitches
   resources :teams
 
-   resources :groups do
+  resources :groups do
     resource :user_groups
     get "add_members" => "user_groups#show"
   end

@@ -1,0 +1,28 @@
+<% if params[:confirm] %>
+  <h4>Leave this group</h4>
+  <%= form_for @group do |f| %>
+    <div class="actions">
+      <%= f.submit "Leave", name: "confirm", value: :true, class:"btn btn-danger btn-sm" %>
+    </div>
+  <% end %>
+<% else %>
+  <%= form_for @group do |f| %>
+    <div class="field">
+      <%= f.label :groupname %><br/>
+      <%= f.text_field :name, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :description %><br/>
+      <%= f.text_field :description %>
+    </div>
+
+    <div class="field">
+      <%= f.hidden_field :admin_id, value: current_user.id %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Edit" %>
+    </div>
+  <% end %>
+<% end %>

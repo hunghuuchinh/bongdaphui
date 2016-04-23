@@ -1,5 +1,5 @@
 <% if comment.id %>
-  <%= image_tag comment.user.avatar.url(:comment) %>
+  <%#=<%= image_tag comment.user.avatar.url(:comment) %>
   <%= link_to comment.user.name, comment.user %>:
   <%= best_in_place_if current_user?(comment.user), comment, :content, :ok_button => "ok", :ok_button_class => "btn btn-success ", :cancel_button => "X", :cancel_button_class => "btn btn-danger" %></br>
   <%= image_tag comment.picture.url if comment.picture? %>
