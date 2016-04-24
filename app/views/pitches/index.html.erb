@@ -1,0 +1,8 @@
+<h1>All Pithes</h1>
+<% @pitches.each do |pitch| %>
+  <p>
+    <%= link_to pitch_path(pitch) do %>
+      <%= pitch.name %>
+    <% end %>
+  </p>
+<% end %>

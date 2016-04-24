@@ -1,6 +1,13 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "sample app", root_path, id: "logo" %>
+    <%= link_to "San Bong Ha Noi", root_path, id: "logo" %>
+    <%= search_form_for @search, url: pitches_path do |f| %>
+      <div id="search">
+        <div id="search-input">
+        <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search" %>
+        <%= f.text_field :name_cont, placeholder: "Input pitchs name" %></div>
+      </div>
+    <% end %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
