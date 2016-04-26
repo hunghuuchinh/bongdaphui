@@ -2,7 +2,8 @@ class PitchesController < ApplicationController
    #before_action :logged_in_user, only: [ :edit, :update, :destroy, :create, :new]
    def index
     @search = Pitch.search(params[:q])
-    @pitches = @search.result
+    @pitches = @search.result.paginate(:page => params[:page], :per_page => 30)
+    # @pitches = Pitch.paginate(:page => params[:page], :per_page => 30)
   end
 
   def show
