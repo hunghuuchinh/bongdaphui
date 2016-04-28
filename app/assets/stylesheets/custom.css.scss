@@ -208,7 +208,7 @@ aside {
       width: 100%;
       height: 100%;
       margin: auto;
-      }
+      }r
 
 /* Users index */
 
@@ -220,4 +220,10 @@ aside {
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
   }
+}
+.image-pitch{
+  max-width: 100%;
+}
+.pitch_information{
+  text-align: center;
 }

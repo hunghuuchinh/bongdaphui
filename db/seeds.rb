@@ -24,8 +24,4 @@ User.create!(name:  "hungba",
                password_confirmation: password)
 end
 
-"Puts create 100 Pitchs"
-100.times do |n|
-  name = Faker::Name.name
-  Pitch.create!(name: name)
-end
+
