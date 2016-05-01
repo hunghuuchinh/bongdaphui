@@ -1,7 +1,30 @@
+
 <div class="col-md-8 show-pitch">
+<span class ="glyphicon glyphicon-picture "></span></br>
 <%= image_tag @pitch.image.url %>
-  <div class="col-md-4">
-    <%= @pitch.name %><br>
-    <%= @pitch.description %>
-  </div>
 </div>
+ <div class="col-md-4">
+  <i class="fa fa-users" aria-hidden="true"></i></i>Name</br>
+    <%= @pitch.name %><br>
+  <i class="fa fa-wikipedia-w" aria-hidden="true"></i>Description</span></br>
+    <%= @pitch.description %></br>
+  <span class ="glyphicon glyphicon-map-marker">County</span></br>
+    <%= @pitch.county %></br>
+  <span class ="glyphicon glyphicon-road">Address</span></br>
+    <%= @pitch.address%></br>
+  <span class ="glyphicon glyphicons-shoes"></span>haveRentShoes</br>
+    <%= @pitch.rent_shoes %></br>
+  <i class="fa fa-futbol-o" aria-hidden="true"></i>haveRentBall</span></br>
+    <%= @pitch.rent_ball %></br>
+  <i class="fa fa-arrows-v" aria-hidden="true"></i></i>haveRentkit</br>
+    <%= @pitch.rent_kit %></br>
+  <span class ="glyphicon glyphicon-flash">haveLampInNight</span></br>
+    <%= @pitch.have_lamp %></br>
+  <i class="fa fa-money" aria-hidden="true"></i>Monney/Child Pitch</br>
+    <%= @pitch.cost %></br>
+  <span class ="glyphicon glyphicon-phone">PhoneNumber</span></br>
+    <%= @pitch.phone %>
+
+
+</div>
+<%#<%= image_tag(user.avatar.url(:thumb)) %>

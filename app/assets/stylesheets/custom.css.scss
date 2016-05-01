@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 /* mixins, variables, etc. */
 
@@ -74,7 +75,7 @@ p {
 /* footer */
 
 footer {
-  margin-top: 45px;
+  margin-top: auto;
   padding-top: 5px;
   border-top: 1px solid $gray-medium-light;
   color: $gray-light;
@@ -225,5 +226,9 @@ aside {
   max-width: 100%;
 }
 .pitch_information{
+  text-align: center;
+}
+
+glyphicon-picture{
   text-align: center;
 }

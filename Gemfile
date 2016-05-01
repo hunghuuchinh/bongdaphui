@@ -36,7 +36,7 @@ gem "paperclip", "~> 4.3"
 gem "private_pub"
 gem "thin"
 gem "commontator"
-
+gem "bootstrap-social-rails"
 
 
 group :development, :test do
