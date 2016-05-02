@@ -1,0 +1,38 @@
+<div class="search">
+   <div class="row">
+      <div class="col-sm-8">
+        <div class="col-sm-6">
+          <%= f.label :cost %>
+          <%= f.collection_select :cost_gteq, Settings.prices,
+            :last, :first, {include_blank: t("search.minimum")},
+            {class: "form-control", id: "min_cost"} %><br>
+          <%= f.collection_select :cost_lteq, Settings.prices,
+            :last, :first, {include_blank: t("search.cost")},
+            {class: "form-control", id: "max_cost"} %><br>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <%= f.label :region_province %>
+        <%= f.collection_select :region_province_cont, Settings.locations,
+          :last, :last, {include_blank: t("search.region")},
+          {class: "form-control", id: "address"} %><br>
+        <%= link_to t("description.advance_search"), "javascript:void(0)",
+          id: "advance_search" %>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="wall">
+        <%= f.text_field :description_or_name_cont, {placeholder: t("search.keyword"),
+          class: "form-control", id: "keyword"} %>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <%= f.submit t("api.search"), {class: "btn btn-primary btn-block",
+        id: "sumbit_search"} %>
+    </div>
+  </div><br>
+
+
+</div>

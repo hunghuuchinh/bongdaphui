@@ -15,11 +15,11 @@ ActiveRecord::Schema.define(version: 20160418100111) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "content"
-    t.string   "picture"
+    t.string   "picture_comment"
     t.integer  "user_id"
     t.integer  "status_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_index "comments", ["status_id"], name: "index_comments_on_status_id"
@@ -59,11 +59,11 @@ ActiveRecord::Schema.define(version: 20160418100111) do
 
   create_table "statuses", force: :cascade do |t|
     t.string   "content"
-    t.string   "picture"
+    t.string   "picture_status"
     t.integer  "user_id"
     t.integer  "group_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   add_index "statuses", ["group_id"], name: "index_statuses_on_group_id"
@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 20160418100111) do
   create_table "teams", force: :cascade do |t|
     t.string   "name"
     t.string   "county"
-    t.string   "image"
+    t.string   "photo"
     t.text     "description"
     t.integer  "user_id"
     t.datetime "created_at",  null: false

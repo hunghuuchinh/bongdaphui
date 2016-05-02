@@ -25,7 +25,6 @@ gem 'sdoc',         '0.4.0', group: :doc
 gem 'ransack'
 gem 'rails_admin'
 gem "cancancan"
-gem 'devise'
 gem 'omniauth-facebook'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'public_activity'
@@ -34,7 +33,6 @@ gem "whenever", require: false
 gem "jquery-atwho-rails"
 gem "paperclip", "~> 4.3"
 gem "private_pub"
-gem "thin"
 gem "commontator"
 gem "bootstrap-social-rails"
 

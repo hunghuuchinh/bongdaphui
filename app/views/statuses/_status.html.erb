@@ -14,7 +14,7 @@
   </span></br></br>
   <span class="content">
     <%= best_in_place_if current_user?(status.user), status, :content, :ok_button => "ok", :ok_button_class => "btn btn-success ", :cancel_button => "X", :cancel_button_class => "btn btn-danger" %></br>
-    <%= image_tag status.picture.url if status.picture? %>
+    <%= image_tag status.picture_status.url if status.picture_status? %>
   </span></br>
 
   <%#=<span>
@@ -40,7 +40,7 @@
         <%= f.hidden_field :status_id, value: status.id %>
         <%= f.hidden_field :user_id, value: current_user.id %>
         <%= f.text_area :content, placeholder: "Compose new comment..." %>
-        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+        <%= f.file_field :picture_comment, accept: 'image/jpeg,image/gif,image/png' %>
       </div>
     <%= f.submit "Comment", class: "btn btn-primary" %>
   <% end %>

@@ -1,6 +1,8 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
 
+  def index
+  end
   def new
     @group = Group.new
   end
@@ -56,7 +58,7 @@ class GroupsController < ApplicationController
    def group_params
     params.require(:group).permit :name, :description, :admin_id, user_ids: [],
       user_groups_attributes: [:id, :user_id, :group_id],
-      statuses_attributes: [:id, :group_id, :user_id, :content, :picture]
+      statuses_attributes: [:id, :group_id, :user_id, :content, :picture_status]
 
   end
 

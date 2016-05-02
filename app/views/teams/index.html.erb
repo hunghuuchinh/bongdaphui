@@ -1,0 +1,10 @@
+<h1>All Teams </h1>
+<%= will_paginate %>
+
+<ul class="teams ">
+  <% @teams.each do |team| %>
+    <%= render team %>
+  <% end %>
+</ul>
+
+<%= will_paginate %>

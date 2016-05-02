@@ -3,7 +3,7 @@ class CreateTeams < ActiveRecord::Migration
     create_table :teams do |t|
       t.string :name
       t.string :county
-      t.string :image
+      t.string :photo
       t.text :description
       t.references :user, index: true, foreign_key: true
 

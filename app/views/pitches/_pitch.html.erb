@@ -3,9 +3,10 @@
  <%= image_tag pitch.image.url, class: "image-pitch"%>
  <% end %>
   <div class="pitch_information">
-  <i class="fa fa-users" aria-hidden="true"></i
+  <i class="fa fa-users" aria-hidden="true"></i>
     <%= link_to pitch.name, pitch %><br>
-    <i class="fa fa-wikipedia-w" aria-hidden="true"><%= pitch.description %>
+    <i class="fa fa-wikipedia-w" aria-hidden="true">
+    <%= pitch.description %></i>
   </div>
 </div>
 <%#<%= image_tag(user.avatar.url(:thumb)) %>

@@ -2,7 +2,7 @@ class CreateStatuses < ActiveRecord::Migration
   def change
     create_table :statuses do |t|
       t.string :content
-      t.string :picture
+      t.string :picture_status
       t.references :user, index: true, foreign_key: true
       t.references :group, index: true, foreign_key: true
 

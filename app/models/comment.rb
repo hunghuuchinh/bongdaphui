@@ -1,6 +1,6 @@
 class Comment < ActiveRecord::Base
   include PublicActivity::Model
-  mount_uploader :picture, PictureUploader
+  mount_uploader :picture_comment, PictureUploader
   belongs_to :user
   belongs_to :status
 
@@ -19,8 +19,8 @@ class Comment < ActiveRecord::Base
   private
   # Validates the size of an uploaded picture.
   def picture_size
-    if picture.size > 5.megabytes
-      errors.add(:picture, "should be less than 5MB")
+    if picture_comment.size > 5.megabytes
+      errors.add(:picture_comment, "should be less than 5MB")
     end
   end
 end

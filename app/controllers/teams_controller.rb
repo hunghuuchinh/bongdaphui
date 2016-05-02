@@ -17,10 +17,13 @@ class TeamsController < ApplicationController
        render 'new'
       end
   end
+  def index
+   @teams = Team.paginate(page: params[:page])
+  end
 
   private
   def team_params
-     params.require(:team).permit(:name ,:image,:county,:description)
+     params.require(:team).permit(:name ,:photo,:county,:description)
   end
 
 end
