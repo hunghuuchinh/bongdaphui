@@ -11,15 +11,36 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Help", help_path %></li>
+
+         <%-# admin -%>
         <% if logged_in? && current_user.role =="admin" %>
-          <li><%= link_to "Teams ", teams_path %></li>
-          <li><%= link_to "Groups", groups_path %></li>
-          <li><%= link_to "Create_pitch", new_pitch_path  %></li>
-          <li><%= link_to "Create Team", new_team_path  %></li>
-          <li><%= link_to "Create Group", new_group_path %></li>
-
-
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Team Manage <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Create Team", new_team_path %></li>
+              <li><%= link_to "Search Team", teams_path %></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+             Group Manage <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Create Group", new_group_path %></li>
+              <li><%= link_to "Search Group", groups_path %></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Pitch Manage <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Create Pitch", new_pitch_path%></li>
+              <li><%= link_to "Search Pitch", pitches_path %></li>
+            </ul>
+          </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               Account <b class="caret"></b>
@@ -34,8 +55,72 @@
             </ul>
           </li>
 
-          <%  elsif logged_in? && current_user.role =="normal" %>
+          <%-# manage pitch -%>
 
+          <%  elsif logged_in? && current_user.role =="manage_pitch" %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Pitch Manage <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Create Pitch", new_pitch_path%></li>
+              <li><%= link_to "Search Pitch", pitches_path  %></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Account <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Profile", current_user %></li>
+              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Log out", logout_path, method: "delete" %>
+              </li>
+            </ul>
+          </li>
+
+          <%-# manage team -%>
+          <%  elsif logged_in? && current_user.role =="manage_team" %>
+           <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Team Manage <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Create Team", new_team_path %></li>
+              <li><%= link_to "Search Team", teams_path %></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+             Group Manage <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Create Group", new_group_path %></li>
+              <li><%= link_to "Search Group", groups_path %></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Account <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Profile", current_user %></li>
+              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Log out", logout_path, method: "delete" %>
+              </li>
+            </ul>
+          </li>
+
+
+          <%-# normal -%>
+          <%  elsif logged_in? && current_user.role =="normal" %>
+          <li><%= link_to "Search Team", teams_path %></li>
+          <li><%= link_to "Search Group", groups_path %></li>
+          <li><%= link_to "Search Pitch", pitches_path %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               Account <b class="caret"></b>
@@ -51,6 +136,9 @@
           </li>
 
         <% else %>
+           <li><%= link_to "Search Team", teams_path %></li>
+          <li><%= link_to "Search Group", groups_path %></li>
+          <li><%= link_to "Search Pitch", pitches_path %></li>
           <li><%= link_to "Log in", login_path %></li>
         <% end %>
       </ul>

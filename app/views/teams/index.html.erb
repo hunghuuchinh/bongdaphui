@@ -1,9 +1,19 @@
 <h1>All Teams </h1>
+
+ <%= search_form_for @search, url: teams_path do |f| %>
+      <div id="search_team">
+        <div id="search-input">
+        <%= f.label :name_cont, "Name Or Description  "%>
+        <%= f.text_field :description_or_name_cont, placeholder: "Input teams name or description" %></div>
+        <div class="actions"><%= f.submit "Search" %></div>
+      </div>
+    <% end %>
 <%= will_paginate %>
 
 <ul class="teams ">
   <% @teams.each do |team| %>
     <%= render team %>
+
   <% end %>
 </ul>
 
