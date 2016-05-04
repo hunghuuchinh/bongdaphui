@@ -11,6 +11,8 @@ gem 'net-ssh'
 gem 'gmaps4rails'
 gem 'underscore-rails'
 gem "font-awesome-rails"
+gem 'geocoder'
+gem 'bootstrap_form'
 
 gem 'acts-as-taggable-on'
 gem 'rails',        '4.2.2'
@@ -35,6 +37,7 @@ gem "paperclip", "~> 4.3"
 gem "private_pub"
 gem "commontator"
 gem "bootstrap-social-rails"
+gem 'responders', '~> 2.0'
 
 
 group :development, :test do

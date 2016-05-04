@@ -8,4 +8,6 @@ class ApplicationController < ActionController::Base
   def search_form
     @search = Pitch.all.search params[:q]
   end
+
+
 end

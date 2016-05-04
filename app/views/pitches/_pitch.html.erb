@@ -1,6 +1,6 @@
 <div class="col-md-4 pitch">
 <% if pitch.image? %>
- <%= image_tag pitch.image.url, class: "image-pitch"%>
+ <%= image_tag pitch.image.url(:medium), class: "image-pitch"%>
  <% end %>
   <div class="pitch_information">
   <i class="fa fa-users" aria-hidden="true"></i>

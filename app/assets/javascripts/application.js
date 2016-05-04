@@ -17,7 +17,7 @@
 //= require_tree .
 //= require underscore
 //= require gmaps/google
-
 //= require gmap
+
 //= require jquery.purr
 //= require best_in_place

@@ -1,6 +1,6 @@
 <% provide :title, @group.name %>
 <div class="row">
-  <aside class="col-md-2">
+  <aside class="col-md-4">
     <section>
       <h1>
         Group:
@@ -36,7 +36,7 @@
       </table>
     </section>
   </aside>
- <aside class="col-md-5">
+ <aside class="col-md-8">
     <h3>Statuses Feed</h3>
       <section class="micropost_form">
         <%= form_for @group, html: {multipart: true} do |f| %>
@@ -45,13 +45,13 @@
             <% if p.object.try(:content).present? %>
               <% p.hidden_field :user_id, value: p.object.user_id %>
               <% p.hidden_field :content, value: p.object.content %>
-              <% p.hidden_field :picture, value: p.object.picture %>
+              <% p.hidden_field :picture_status, value: p.object.picture_status %>
             <% else%>
               <div class="field">
                 <%= p.hidden_field :user_id, value: current_user.id %>
                 <%= p.text_area :content, placeholder: "Compose new status...", class: "form-control" %>
                 <span class="picture">
-                  <%= p.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+                  <%= p.file_field :picture_status, accept: 'image/jpeg,image/gif,image/png' %>
                 </span>
               </div>
             <% end %>

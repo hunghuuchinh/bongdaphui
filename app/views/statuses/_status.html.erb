@@ -1,4 +1,4 @@
-<li id="<%= status.id %>">
+<li id="<%= status.id %>"  >
   <%#= <span class="avatar">
     <%= image_tag(status.user.avatar.url(:status)) %>
   <%#=</span> %>
@@ -17,17 +17,7 @@
     <%= image_tag status.picture_status.url if status.picture_status? %>
   </span></br>
 
-  <%#=<span>
-    <% if current_user.liked? status %>
-    <%#=  <%= link_to "Unlike", unlike_status_path(status), class: 'vote', method: :put, remote: true, data: { toggle_text: 'Like', toggle_href: like_status_path(status), id: status.id } %>
-    <%#=<% else %>
-   <%#=   <%= link_to "Like", like_status_path(status), class: 'vote', method: :put, remote: true, data: { toggle_text: 'Unlike', toggle_href: unlike_status_path(status), id: status.id } %>
-   <%#= <% end %>
-  <%#=</span>
-  <span class="votes-count" data-id="<%= status.id %>">
-   <%#= <%= status.get_likes.size %>
-  </span>
-  Likes</br></br>
+  </span></br>
   Comments:</br>
   <% @comments = status.comments %>
   <span id="status-comment">
@@ -40,7 +30,6 @@
         <%= f.hidden_field :status_id, value: status.id %>
         <%= f.hidden_field :user_id, value: current_user.id %>
         <%= f.text_area :content, placeholder: "Compose new comment..." %>
-        <%= f.file_field :picture_comment, accept: 'image/jpeg,image/gif,image/png' %>
       </div>
     <%= f.submit "Comment", class: "btn btn-primary" %>
   <% end %>

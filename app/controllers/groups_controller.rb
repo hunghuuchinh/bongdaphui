@@ -4,7 +4,12 @@ class GroupsController < ApplicationController
   def index
   end
   def new
+    if current_user.groups.count == 0
     @group = Group.new
+  else
+    flash[:danger] = "You can not create more than 1 group "
+    redirect_to root_url
+  end
   end
 
   def destroy
@@ -25,6 +30,7 @@ class GroupsController < ApplicationController
   end
 
     def create
+
     @group = Group.new group_params
     @group.user_ids << current_user.id
     if @group.save

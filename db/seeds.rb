@@ -12,16 +12,160 @@ User.create!(name:  "hungba",
              password_confirmation: "123456",
              phone: "01676571863",
              role: "admin")
-99.times do |n|
-  name  = Faker::Name.name
-  email = "example-#{n+1}@railstutorial.org"
-  password = "password"
-  phone ="1234567890"
-  User.create!(name:  name,
-               email: email,
-               phone: phone,
-               password:              password,
-               password_confirmation: password)
-end
+
+User.create!(name:  "hung1",
+             email: "hung1@gmail.com",
+             password:              "123456",
+             password_confirmation: "123456",
+             phone: "01676571863",
+             role: "manage_pitch")
+User.create!(name:  "hung2",
+             email: "hung2@gmail.com",
+             password:              "123456",
+             password_confirmation: "123456",
+             phone: "01676571863",
+             role: "manage_pitch")
+User.create!(name:  "hung3",
+             email: "hung3@gmail.com",
+             password:              "123456",
+             password_confirmation: "123456",
+             phone: "01676571863",
+             role: "manage_pitch")
+User.create!(name:  "hung4",
+             email: "hung4@gmail.com",
+             password:              "123456",
+             password_confirmation: "123456",
+             phone: "01676571863",
+             role: "manage_pitch")
+User.create!(name:  "hung5",
+             email: "hung5@gmail.com",
+             password:              "123456",
+             password_confirmation: "123456",
+             phone: "01676571863",
+             role: "manage_pitch")
+User.create!(name:  "hung6",
+             email: "hung6@gmail.com",
+             password:              "123456",
+             password_confirmation: "123456",
+             phone: "01676571863",
+             role: "manage_pitch")
+User.create!(name:  "hung7",
+             email: "hung7@gmail.com",
+             password:              "123456",
+             password_confirmation: "123456",
+             phone: "01676571863",
+             role: "manage_pitch")
+User.create!(name:  "hung8",
+             email: "hung8@gmail.com",
+             password:              "123456",
+             password_confirmation: "123456",
+             phone: "01676571863",
+             role: "manage_pitch")
+User.create!(name:  "hung9",
+             email: "hung9@gmail.com",
+             password:              "123456",
+             password_confirmation: "123456",
+             phone: "01676571863",
+             role: "manage_pitch")
+User.create!(name:  "hung10",
+             email: "hung10@gmail.com",
+             password:              "123456",
+             password_confirmation: "123456",
+             phone: "01676571863",
+             role: "manage_pitch")
+
+User.create!(name:  "hung11",
+             email: "hung11@gmail.com",
+             password:              "123456",
+             password_confirmation: "123456",
+             phone: "01676571863",
+             role: "manage_team")
+User.create!(name:  "hung12",
+             email: "hung12@gmail.com",
+             password:              "123456",
+             password_confirmation: "123456",
+             phone: "01676571863",
+             role: "manage_team")
+
+User.create!(name:  "hung13",
+             email: "hung13@gmail.com",
+             password:              "123456",
+             password_confirmation: "123456",
+             phone: "01676571863",
+             role: "manage_team")
+
+User.create!(name:  "hung14",
+             email: "hung14@gmail.com",
+             password:              "123456",
+             password_confirmation: "123456",
+             phone: "01676571863",
+             role: "manage_team")
+
+User.create!(name:  "hung15",
+             email: "hung15@gmail.com",
+             password:              "123456",
+             password_confirmation: "123456",
+             phone: "01676571863",
+             role: "manage_team")
+
+User.create!(name:  "hung16",
+             email: "hung16@gmail.com",
+             password:              "123456",
+             password_confirmation: "123456",
+             phone: "01676571863",
+             role: "manage_team")
+
+User.create!(name:  "hung17",
+             email: "hung17@gmail.com",
+             password:              "123456",
+             password_confirmation: "123456",
+             phone: "01676571863",
+             role: "manage_team")
+
+User.create!(name:  "hung18",
+             email: "hung18@gmail.com",
+             password:              "123456",
+             password_confirmation: "123456",
+             phone: "01676571863",
+             role: "manage_team")
+
+User.create!(name:  "hung19",
+             email: "hung19@gmail.com",
+             password:              "123456",
+             password_confirmation: "123456",
+             phone: "01676571863",
+             role: "manage_team")
+User.create!(name:  "hung20",
+             email: "hung20@gmail.com",
+             password:              "123456",
+             password_confirmation: "123456",
+             phone: "01676571863",
+             role: "manage_team")
+
+User.create!(name:  "hung21",
+             email: "hung21@gmail.com",
+             password:              "123456",
+             password_confirmation: "123456",
+             phone: "01676571863",
+             role: "normal")
+
+User.create!(name:  "hung22",
+             email: "hung22@gmail.com",
+             password:              "123456",
+             password_confirmation: "123456",
+             phone: "01676571863",
+             role: "normal")
+
+User.create!(name:  "hung23",
+             email: "hung23@gmail.com",
+             password:              "123456",
+             password_confirmation: "123456",
+             phone: "01676571863",
+             role: "normal")
+
+
+
+
+
 
 

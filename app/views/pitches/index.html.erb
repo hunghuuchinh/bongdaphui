@@ -1,4 +1,34 @@
 <h1>All Pithes</h1>
+<%= search_form_for @search, url: pitches_path do |f| %>
+      <div class="col-md-4">
+        <div class="search_name">
+          <%= f.label :name_cont, "Name Or Description Or Address  "%>
+          <%= f.text_field :description_or_name_or_address_cont, placeholder: "Input Pitch name or description or Address" %>
+        </div>
+      </div>
+      <div class="col-md-4 form-inline" role ="form">
+          <div class="search_cost">
+            <%= f.label :cost_gteq ,"Price between" %>
+            <%= f.text_field :cost_gteq %>
+            <%= f.label :cost_lteq ,"And" %>
+            <%= f.text_field :cost_lteq %>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="search-service">
+          <%= f.label :rent_shoes ,"Rent Shoes" %>
+          <%= f.check_box :rent_shoes_true %>
+          <%= f.label :rent_ball ,"Rent Ball" %>
+          <%= f.check_box :rent_ball_true %>
+          <%= f.label :rent_kit ,"Rent Kit" %>
+          <%= f.check_box :rent_kit_true %>
+          <%= f.label :have_lamp ,"Have Lamp" %>
+          <%= f.check_box :have_lamp_true %>
+        </div>
+        </div>
+      <div class="actions"><%= f.submit "Search" %></div>
+    <% end %>
+
 <%= will_paginate %>
 
 <ul class="pitches">
