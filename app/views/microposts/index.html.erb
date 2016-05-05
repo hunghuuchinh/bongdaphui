@@ -1,0 +1,9 @@
+ <h1>Bong Da Phui News </h1>
+<%= will_paginate %>
+
+<ul class="microposts">
+  <% @microposts.each do |micropost| %>
+    <%= render micropost %>
+  <% end %>
+</ul>
+<%= will_paginate %>

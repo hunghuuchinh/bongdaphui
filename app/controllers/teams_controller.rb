@@ -24,7 +24,7 @@ class TeamsController < ApplicationController
   end
   def index
     @search = Team.search(params[:q])
-    @teams = @search.result.paginate(:page => params[:page], :per_page => 30)
+    @teams = @search.result.paginate(:page => params[:page], :per_page => 9)
   end
 
   private

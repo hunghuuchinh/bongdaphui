@@ -1,5 +1,14 @@
 <% provide(:title, 'All users') %>
 <h1>All users</h1>
+<%= search_form_for @search, url: users_path do |f| %>
+      <div class="col-md-12 ">
+        <div class="search_email">
+          <%= f.label :email_cont, "Email"%>
+          <%= f.text_field :email_cont, placeholder: "Input Email " %>
+           <div class="actions"><%= f.submit "Search" %></div>
+        </div>
+      </div>
+  <% end %>
 <%= will_paginate %>
 <ul class="users">
   <%= render @users %>

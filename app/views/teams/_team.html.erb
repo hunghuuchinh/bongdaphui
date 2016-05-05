@@ -1,6 +1,6 @@
 <div class="col-md-4 team">
 <% if team.photo? %>
- <%= image_tag team.photo.url, class: "photo-team"%>
+ <%= image_tag team.photo.url(:medium), class: "photo-team"%>
  <% end %>
   <div class="team_information">
   <i class="fa fa-users" aria-hidden="true"></i>

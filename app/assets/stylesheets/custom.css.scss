@@ -223,7 +223,8 @@ aside {
   }
 }
 .image-pitch{
-  max-width: 100%;
+  width: 300px;
+  height: 300px;
 }
 .pitch_information{
   text-align: center;
@@ -241,4 +242,74 @@ glyphicon-picture{
 }
 .my-group{
   text-align:center;
+}
+/* microposts */
+
+.microposts {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+span.picture {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}
+.title-micropost{
+  font-family: "Times New Roman", Times, serif;
+    color: #222;
+    font-size: 27px;
+    font-weight: normal;
+    line-height: 36px;
+}
+.image-micropost{
+  max-width: 100%;
+}
+.micropost_information{
+  font-size: 11pt;
+  text-align: justify;
+  line-height: 1.5em;
+  font-family: Arial,Helvetica,sans-serif;
+}
+.photo-team{
+  width: 300px;
+  height: 300px;
+}
+.image-show-pitch{
+  width: 600;
+  height: 400px;
+}
+.image-show-team{
+  width: 600px;
+  height: 400px;
 }

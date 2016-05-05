@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_one :admin_group, foreign_key: "admin_id"
   has_many :statuses, dependent: :destroy
   has_many :comments
+  has_many :microposts, dependent: :destroy
   acts_as_voter
 
   before_save   :downcase_email
@@ -44,6 +45,7 @@ class User < ActiveRecord::Base
   def forget
     update_attribute(:remember_digest, nil)
   end
+
 
 
  private

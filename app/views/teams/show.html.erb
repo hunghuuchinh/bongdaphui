@@ -1,0 +1,15 @@
+
+<div class="col-md-8 show-team">
+<span class ="glyphicon glyphicon-picture "></span></br>
+<%= image_tag @team.photo.url, class: "image-show-team" %>
+</div>
+ <div class="col-md-4">
+  <i class="fa fa-users" aria-hidden="true"></i>Name</br>
+    <%= @team.name %><br>
+  <i class="fa fa-wikipedia-w" aria-hidden="true"></i>Description</span></br>
+    <%= @team.description %></br>
+  <span class ="glyphicon glyphicon-map-marker">County</span></br>
+    <%= @team.county %></br>
+
+</div>
+<%#<%= image_tag(user.avatar.url(:thumb)) %>
