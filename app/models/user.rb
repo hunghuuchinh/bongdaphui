@@ -8,7 +8,6 @@ class User < ActiveRecord::Base
   has_many :statuses, dependent: :destroy
   has_many :comments
   has_many :microposts, dependent: :destroy
-  acts_as_voter
 
   before_save   :downcase_email
   mount_uploader :picture, PictureUploader

@@ -2,6 +2,10 @@
 <div class="col-md-8 show-pitch">
 <span class ="glyphicon glyphicon-picture "></span></br>
 <%= image_tag @pitch.image.url, class: "image-show-pitch" %>
+<div><span style ="font-weight: bold;">Location on Map</span></div>
+<div id="googleMap" style="width:640px;height:300px;"></div>
+<input type="hidden" value="<%= @pitch.lat %>" id="pitch_lat">
+<input type="hidden" value="<%= @pitch.lng %>" id="pitch_lng">
 </div>
  <div class="col-md-4">
   <i class="fa fa-users" aria-hidden="true"></i>Name</br>
@@ -24,7 +28,6 @@
     <%= @pitch.cost %></br>
   <span class ="glyphicon glyphicon-phone">PhoneNumber</span></br>
     <%= @pitch.phone %>
-
-
 </div>
+
 <%#<%= image_tag(user.avatar.url(:thumb)) %>

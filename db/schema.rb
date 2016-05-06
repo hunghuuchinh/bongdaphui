@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505083839) do
+ActiveRecord::Schema.define(version: 20160506090138) do
+
+  create_table "child_pitches", force: :cascade do |t|
+    t.string   "name"
+    t.string   "status"
+    t.integer  "pitch_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "child_pitches", ["pitch_id"], name: "index_child_pitches_on_pitch_id"
 
   create_table "comments", force: :cascade do |t|
     t.string   "content"

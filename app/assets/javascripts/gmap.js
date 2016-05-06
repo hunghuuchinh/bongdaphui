@@ -2,16 +2,6 @@
 <script src="//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js"></script>
 <script src='//google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.9/src/infobox_packed.js' type='text/javascript'></script>
 var map;
-var currentPosition;
-var marker;
-
-function initialize()
-{
-  var mapProp = {
-    center: new google.maps.LatLng(51.508742,-0.120850),
-    zoom:16,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
   map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
   getLocation();
   google.maps.event.addListener(map,'click',function(event) {
