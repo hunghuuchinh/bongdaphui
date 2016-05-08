@@ -21,3 +21,5 @@
 
 //= require jquery.purr
 //= require best_in_place
+//= require jquery.raty
+//= require ratyrate

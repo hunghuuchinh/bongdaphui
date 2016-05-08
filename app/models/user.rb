@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  ratyrate_rater
   attr_accessor :remember_token
   has_one :pitch, dependent: :destroy
   has_one :team, dependent: :destroy

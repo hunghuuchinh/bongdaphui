@@ -13,6 +13,7 @@ gem 'underscore-rails'
 gem "font-awesome-rails"
 gem 'geocoder'
 gem 'bootstrap_form'
+gem 'ratyrate'
 
 gem 'acts-as-taggable-on'
 gem 'rails',        '4.2.2'

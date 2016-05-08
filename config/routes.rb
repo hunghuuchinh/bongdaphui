@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
    # mount Soulmate::Server, :at => "/autocomplete"
   root 'static_pages#home'
   get 'help'    => 'static_pages#help'
