@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160511165420) do
+ActiveRecord::Schema.define(version: 20160512034429) do
 
   create_table "average_caches", force: :cascade do |t|
     t.integer  "rater_id"
@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 20160511165420) do
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "rating"
   end
 
   add_index "pitches", ["user_id", "created_at"], name: "index_pitches_on_user_id_and_created_at"
