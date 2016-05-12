@@ -1,6 +1,6 @@
 class Pitch < ActiveRecord::Base
 
-  ratyrate_rateable "rating"
+  ratyrate_rateable "name"
   has_many :child_pitches
   mount_uploader :image, PictureUploader
   belongs_to :user

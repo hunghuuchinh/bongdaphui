@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160508150104) do
+ActiveRecord::Schema.define(version: 20160511165420) do
 
   create_table "average_caches", force: :cascade do |t|
     t.integer  "rater_id"
@@ -64,6 +64,18 @@ ActiveRecord::Schema.define(version: 20160508150104) do
   add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
   add_index "microposts", ["user_id"], name: "index_microposts_on_user_id"
 
+  create_table "orders", force: :cascade do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer  "user_id"
+    t.integer  "child_pitch_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "orders", ["child_pitch_id"], name: "index_orders_on_child_pitch_id"
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id"
+
   create_table "overall_averages", force: :cascade do |t|
     t.integer  "rateable_id"
     t.string   "rateable_type"
@@ -85,7 +97,6 @@ ActiveRecord::Schema.define(version: 20160508150104) do
     t.float    "lat"
     t.float    "lng"
     t.string   "county"
-    t.float    "rating"
     t.text     "description"
     t.string   "phone"
     t.integer  "user_id"
@@ -104,6 +115,7 @@ ActiveRecord::Schema.define(version: 20160508150104) do
     t.string   "dimension"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "rating"
   end
 
   add_index "rates", ["rateable_id", "rateable_type"], name: "index_rates_on_rateable_id_and_rateable_type"

@@ -1,4 +1,4 @@
-
+<%= javascript_include_tag 'ratyrate.js', "data-turbolinks-track" => false %>
 <div class="col-md-8 show-pitch">
   <span class ="glyphicon glyphicon-picture "></span></br>
   <%= image_tag @pitch.image.url, class: "image-show-pitch" %>
@@ -29,7 +29,11 @@
   <span class ="glyphicon glyphicon-phone">PhoneNumber</span></br>
     <%= @pitch.phone %></br>
   Rating : </br>
-   <%= rating_for @pitch, "rating",:disable_after_rate => true,:cancel => true , :star => 5 %>
+  <div>
+    <% if current_user %>
+     <%= rating_for @pitch, "name",:disable_after_rate => true,:cancel => true ,enable_half: true, :star => 5 %>
+    <% end %>
+  </div>
 </div>
 
 <%#<%= image_tag(user.avatar.url(:thumb)) %>
