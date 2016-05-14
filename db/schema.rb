@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(version: 20160512034429) do
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "rating"
+    t.float    "rating"
   end
 
   add_index "pitches", ["user_id", "created_at"], name: "index_pitches_on_user_id_and_created_at"

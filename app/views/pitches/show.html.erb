@@ -3,7 +3,6 @@
   <span class ="glyphicon glyphicon-picture "></span></br>
   <%= image_tag @pitch.image.url, class: "image-show-pitch" %>
   <div><span style ="font-weight: bold;">Location on Map</span></div>
-  <div id="googleMap" style="width:640px;height:300px;"></div>
   <input type="hidden" value="<%= @pitch.lat %>" id="pitch_lat">
   <input type="hidden" value="<%= @pitch.lng %>" id="pitch_lng">
 </div>
@@ -31,10 +30,14 @@
   Rating : </br>
   <div>
     <% if current_user %>
-     <%= rating_for @pitch, "rating",:cancel => false,:disable_after_rate => true, :enable_half => true,
-      :star => 5 %>
+     <%= rating_for @pitch, "rating",enable_half: false, half_show: false,  disable_after_rate: false, cancel: true, star: 5 %>
     <% end %>
+    <i id="average_rating">average Rate : <%= @average_rating %></i></br>
+    <i id="total_rater"> Total Rate :<%= @total_rater %></i>
   </div>
 </div>
+  <div class="col-md-12">
+ <div id="googleMap" style="height:400px;"></div>
+ </div>
 
 <%#<%= image_tag(user.avatar.url(:thumb)) %>

@@ -1,3 +1,4 @@
+
 <h1>All Pithes</h1>
 <%= search_form_for @search, url: pitches_path do |f| %>
       <div class="col-md-4">
@@ -5,27 +6,57 @@
           <%= f.label :name_cont, "Name Or Description Or Address  "%>
           <%= f.text_field :description_or_name_or_address_cont, placeholder: "Input Pitch name or description or Address" %>
         </div>
+        <div class="space">
+        ___________________________________________
+        </div>
+        <div class="search_county">
+        <%= f.label :county_matches, "County "%>
+        <%= f.text_field :county_matches, placeholder: "input exactly name county..." %>
+        </div>
+        <div class="space">
+        ___________________________________________
+        </div>
+        <div class="search_by_rate">
+        <%= f.label :rating_gteq, "Rating between"%>
+        <%= f.text_field :rating_gteq, placeholder: "Rating  greater than or equal to (>=0)" %>
+        <%= f.label :rating_lteq, "And "%>
+        <%= f.text_field :rating_lteq, placeholder: "Rating less than or equal to (<=5)." %>
+        </div>
+
+
       </div>
       <div class="col-md-4 form-inline" role ="form">
           <div class="search_cost">
             <%= f.label :cost_gteq ,"Price between" %>
-            <%= f.text_field :cost_gteq %>
+            <%= f.text_field :cost_gteq, placeholder: "Price greater than or equal to" %>
             <%= f.label :cost_lteq ,"And" %>
-            <%= f.text_field :cost_lteq %>
+            <%= f.text_field :cost_lteq ,placeholder: "Price less than or equal to" %>
           </div>
       </div>
       <div class="col-md-4">
-        <div class="search-service">
-          <%= f.label :rent_shoes ,"Rent Shoes" %>
+        <div class="search-service ">
+          <%= f.label :rent_shoes ,class: "checkbox inline" do %>
           <%= f.check_box :rent_shoes_true %>
-          <%= f.label :rent_ball ,"Rent Ball" %>
+          <span style ="font-weight: bold;">Rent_shoes </span>
+          <% end %>
+          <%= f.label :rent_ball ,class: "checkbox inline" do %>
           <%= f.check_box :rent_ball_true %>
-          <%= f.label :rent_kit ,"Rent Kit" %>
+          <span style ="font-weight: bold;">Rent_ball </span>
+          <% end %>
+          <%= f.label :rent_kit ,class: "checkbox inline" do %>
           <%= f.check_box :rent_kit_true %>
-          <%= f.label :have_lamp ,"Have Lamp" %>
+          <span style ="font-weight: bold;">Rent_shoes </span>
+          <% end %>
+          <%= f.label :have_lamp ,class: "checkbox inline" do %>
           <%= f.check_box :have_lamp_true %>
+          <span style ="font-weight: bold;">Rent_shoes </span>
+          <% end %>
         </div>
-        </div>
+      </div>
+
+      <div>
+
+      </div>
       <div class="actions"><%= f.submit "Search" %></div>
     <% end %>
 

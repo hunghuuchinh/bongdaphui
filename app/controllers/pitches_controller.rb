@@ -8,6 +8,12 @@ class PitchesController < ApplicationController
 
   def show
     @pitch = Pitch.find params[:id]
+
+    @average_rating = @pitch.average("rating") ? @pitch.average("rating").avg : 0
+    @total_rater = @pitch.rates("rating") ? @pitch.rates("rating").count : 0
+    @pitch.rating = @average_rating
+    @pitch.save
+
   end
 
   def new

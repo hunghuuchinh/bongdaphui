@@ -1,5 +1,5 @@
 class AddRatingToPitches < ActiveRecord::Migration
   def change
-    add_column :pitches, :rating, :integer
+    add_column :pitches, :rating, :float
   end
 end
