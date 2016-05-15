@@ -2,9 +2,11 @@
 <div class="col-md-8 show-pitch">
   <span class ="glyphicon glyphicon-picture "></span></br>
   <%= image_tag @pitch.image.url, class: "image-show-pitch" %>
-  <div><span style ="font-weight: bold;">Location on Map</span></div>
-  <input type="hidden" value="<%= @pitch.lat %>" id="pitch_lat">
-  <input type="hidden" value="<%= @pitch.lng %>" id="pitch_lng">
+  <% if current_user %>
+     <%= rating_for @pitch, "rating",enable_half: false, half_show: false,  disable_after_rate: false, cancel: true, star: 5 %>
+    <% end %>
+    <i id="average_rating">average Rate : <%= @average_rating %></i></br>
+    <i id="total_rater"> Total Rate :<%= @total_rater %></i>
 </div>
 <div class="col-md-4">
   <i class="fa fa-users" aria-hidden="true"></i>Name</br>
@@ -27,17 +29,20 @@
     <%= @pitch.cost %></br>
   <span class ="glyphicon glyphicon-phone">PhoneNumber</span></br>
     <%= @pitch.phone %></br>
-  Rating : </br>
-  <div>
-    <% if current_user %>
-     <%= rating_for @pitch, "rating",enable_half: false, half_show: false,  disable_after_rate: false, cancel: true, star: 5 %>
-    <% end %>
-    <i id="average_rating">average Rate : <%= @average_rating %></i></br>
-    <i id="total_rater"> Total Rate :<%= @total_rater %></i>
-  </div>
 </div>
   <div class="col-md-12">
- <div id="googleMap" style="height:400px;"></div>
+  <div class ="location-on-map"><span>Location on Map</span></div>
+  <input type="hidden" value="<%= @pitch.lat %>" id="pitch_lat">
+  <input type="hidden" value="<%= @pitch.lng %>" id="pitch_lng">
+  <div id="googleMap" style="height:400px;"></div>
+ <div class="col-md-6 col-md-offset-3" style="text-align:center;">
+   <h2>Order Child Pitch </h2>
+   <%- @pitch.child_pitches.each do |child_pitch| %>
+     child_pitch  <%= child_pitch.id %>&nbsp;&nbsp;&nbsp;|
+    <%= link_to "order", child_pitch_path(child_pitch) %>
+    </br>
+  <% end %>
+ </div>
  </div>
 
 <%#<%= image_tag(user.avatar.url(:thumb)) %>

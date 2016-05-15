@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
   resources :users
   resources :pitches
+  resources :child_pitches
   resources :teams
 
   resources :groups do
@@ -23,7 +24,7 @@ Rails.application.routes.draw do
       put "unlike", to: "statuses#unlike"
     end
   end
-
+  resources :orders
   resources :comments
   resources :microposts
 end

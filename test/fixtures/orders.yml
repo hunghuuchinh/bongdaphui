@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  start_time: 2016-05-11 22:47:46
-  end_time: 2016-05-11 22:47:46
+  time: 
+  date_order: 
   user_id: 
-  child_pitch_id: 
+  pitch_id: 
 
 two:
-  start_time: 2016-05-11 22:47:46
-  end_time: 2016-05-11 22:47:46
+  time: 
+  date_order: 
   user_id: 
-  child_pitch_id: 
+  pitch_id: 

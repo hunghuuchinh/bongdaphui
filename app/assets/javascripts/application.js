@@ -23,3 +23,5 @@
 //= require best_in_place
 //= require jquery.raty
 //= require ratyrate
+//= require moment
+//= require bootstrap-datetimepicker

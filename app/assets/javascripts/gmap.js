@@ -1,3 +1,4 @@
+
 <script src="//maps.google.com/maps/api/js?v=3.18&sensor=false&client=&key=AIzaSyD3LW0eFL2kZufMOHkVmdB69EiTSogACxc&libraries=geometry&language=&hl=&region="></script>
 <script src="//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js"></script>
 <script src='//google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.9/src/infobox_packed.js' type='text/javascript'></script>
@@ -59,8 +60,4 @@ $(document).ready(function(){
     $("#pitch_lng").val(currentPosition.lng);
   });
 })
-
-
-
-
 
