@@ -67,3 +67,14 @@ $(document).ready(function(){
     $("#pitch_lng").val(currentPosition.lng);
   });
 })
+
+
+$(document).on("page:change page:load", function(){
+
+  if($("#googleMap").length > 0) {
+    initialize();
+  }
+  else {
+    return;
+  }
+});

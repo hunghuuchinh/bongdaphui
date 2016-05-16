@@ -61,3 +61,13 @@ $(document).ready(function(){
   });
 })
 
+
+$(document).on("page:change page:load", function(){
+
+  if($("#new-map-container").length > 0) {
+    initialize();
+  }
+  else {
+    return;
+  }
+});
