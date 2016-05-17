@@ -30,8 +30,7 @@ class GroupsController < ApplicationController
     end
   end
 
-    def create
-
+  def create
     @group = Group.new group_params
     @group.user_ids << current_user.id
     if @group.save
@@ -44,7 +43,7 @@ class GroupsController < ApplicationController
     end
   end
 
-    def update
+  def update
     unless params[:confirm]
       if @group.update_attributes group_params
         flash[:success] = "Edited success"

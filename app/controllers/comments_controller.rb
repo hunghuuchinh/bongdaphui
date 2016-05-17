@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-   respond_to :html, :json
+   respond_to :html, :json, :js
 
   def create
     @comment = Comment.create! comment_params

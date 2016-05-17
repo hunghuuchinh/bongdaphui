@@ -1,4 +1,4 @@
-<% if @comment.status_id %>
-  <% publish_to "/comments/new" do %>
-    $("#status-comment").append("<%= j render(@comment) %>");
-  <% end %>
+
+
+$("#status-comment").prepend("<%= j render @comment %>")
+$("#comment_content").val("")
