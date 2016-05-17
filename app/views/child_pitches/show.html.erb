@@ -1,6 +1,7 @@
-<h1>this is show page</h1>
+<h1>this is show page of child pitch id <%= @child_pitch.id %></h1>
   <div class="col-md-2">
   <table  class ="table-child-pitch" style="width:100%">
+  <h2>time order </h2>
   <tr>
     <th>Time Name</th>
     <th>Time </th>
@@ -44,6 +45,7 @@
     <%= form_for Order.new , remote: true do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
       <div class="field">
+        <%= f.text_field :child_pitch_id, value: @child_pitch.id %>
         <%= f.label :user_id %>
         <%= f.text_field :user_id, value: current_user.id, class: 'form-control',
         :readonly => true %>
@@ -52,9 +54,6 @@
         :readonly => true %>
         <%= f.label :phone %>
         <%= f.text_field :phone, value: current_user.phone, class: 'form-control',
-        :readonly => true %>
-        <%= f.label :child_pitch_id %>
-        <%= f.text_field :child_pitch_id, value: child_pitch_id, class: 'form-control',
         :readonly => true %>
 
       </div>
