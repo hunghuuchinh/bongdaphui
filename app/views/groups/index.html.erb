@@ -1,0 +1,12 @@
+<h1>All Group  </h1>
+
+<%= will_paginate %>
+
+<ul class="group ">
+  <% @group.each do |group| %>
+    <%= render group %>
+
+  <% end %>
+</ul>
+
+<%= will_paginate %>

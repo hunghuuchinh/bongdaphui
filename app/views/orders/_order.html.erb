@@ -1,0 +1,13 @@
+<div class="order">
+  <%= form_for(@order, html: { multipart: true }) do |f| %>
+  <%= render 'shared/error_messages', object: f.object  %>
+    <%= f.label :time %>
+      <%= f.select :time, options_for_select([['time1','time1'],['time2','time2'],
+      ['time3','time3'],['time4','time4'],['time5','time5'],['time6','time6'],
+      ['time7','time7'],['time8','time8'],]) %>
+    <%= f.label :date_order %>
+      <%= f.text_field :date_order, class: 'form-control' %>
+
+    <%= f.submit "Create Order", class: "btn btn-primary" %>
+  <% end %>
+</div>

@@ -1,7 +1,8 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:show, :edit, :update, :destroy]
+  before_action :set_group, only: [:show, :edit, :update, :destroy ]
 
   def index
+     @groups = Group.all.paginate(:page => params[:page], :per_page => 30)
   end
   def new
     if current_user.groups.count == 0

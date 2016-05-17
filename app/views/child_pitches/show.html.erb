@@ -3,7 +3,7 @@
   <table  class ="table-child-pitch" style="width:100%">
   <tr>
     <th>Time Name</th>
-    <th>Time </th
+    <th>Time </th>
   </tr>
   <tr>
     <td>Time 1</td>
@@ -40,4 +40,24 @@
 </table>
   </div>
   <div class="col-md-8">col-md-8</div>
-  <div class="col-md-2">col-md-2</div>
+  <div class="col-md-2">
+    <%= form_for Order.new , remote: true do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+      <div class="field">
+        <%= f.label :user_id %>
+        <%= f.text_field :user_id, value: current_user.id, class: 'form-control',
+        :readonly => true %>
+        <%= f.label :user_name %>
+        <%= f.text_field :user_name, value: current_user.name, class: 'form-control',
+        :readonly => true %>
+        <%= f.label :phone %>
+        <%= f.text_field :phone, value: current_user.phone, class: 'form-control',
+        :readonly => true %>
+        <%= f.label :child_pitch_id %>
+        <%= f.text_field :child_pitch_id, value: child_pitch_id, class: 'form-control',
+        :readonly => true %>
+
+      </div>
+    <%= f.submit "Order", class: "btn btn-primary" %>
+  <% end %>
+  </div>

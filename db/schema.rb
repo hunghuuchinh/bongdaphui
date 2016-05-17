@@ -68,12 +68,12 @@ ActiveRecord::Schema.define(version: 20160515172657) do
     t.string   "time"
     t.date     "date_order"
     t.integer  "user_id"
-    t.integer  "itch_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "child_pitch_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
-  add_index "orders", ["itch_id"], name: "index_orders_on_itch_id"
+  add_index "orders", ["child_pitch_id"], name: "index_orders_on_child_pitch_id"
   add_index "orders", ["user_id"], name: "index_orders_on_user_id"
 
   create_table "overall_averages", force: :cascade do |t|
