@@ -2,15 +2,11 @@ class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy ]
 
   def index
-     @groups = Group.all.paginate(:page => params[:page], :per_page => 30)
+    @search = Group.ransack(params[:q])
+    @groups = @search.result.paginate(:page => params[:page], :per_page => 9)
   end
   def new
-    if current_user.groups.count == 0
     @group = Group.new
-  else
-    flash[:danger] = "You can not create more than 1 group "
-    redirect_to root_url
-  end
   end
 
   def destroy
@@ -42,6 +38,9 @@ class GroupsController < ApplicationController
       flash[:danger] = "Create failed"
       render :new
     end
+  end
+  def edit
+    @team = current_user.team
   end
 
     def update

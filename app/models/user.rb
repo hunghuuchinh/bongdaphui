@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
   ratyrate_rater
   attr_accessor :remember_token
-  has_one :pitch, dependent: :destroy
-  has_one :team, dependent: :destroy
+  has_many :pitch, dependent: :destroy
+  has_many :team, dependent: :destroy
   has_many :groups, through: :user_groups
   has_many :user_groups, dependent: :destroy
   has_one :admin_group, foreign_key: "admin_id"

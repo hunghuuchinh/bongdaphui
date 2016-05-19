@@ -4,7 +4,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-
     @order = current_user.orders.build(order_params)
     if @order.save
       flash[:success] = "Order created!"

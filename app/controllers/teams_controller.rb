@@ -5,16 +5,11 @@ class TeamsController < ApplicationController
  end
 
   def new
-    unless current_user.team.present?
     @team = Team.new
-    else
-    flash[:danger] = "You can not create more than 1 Team "
-    redirect_to root_url
-  end
   end
 
   def create
-    @team = current_user.build_team(team_params)
+    @team = current_user.team.create(team_params)
       if @team.save
             flash[:success] = "Team created"
           redirect_to root_url

@@ -1,9 +1,20 @@
 <h1>All Group  </h1>
 
+<%= search_form_for @search, url: groups_path do |f| %>
+      <div id="search_groups">
+        <div id="search-input">
+        <%= f.label :name_cont, "Name Or Description  "%>
+        <%= f.text_field :description_or_name_cont, placeholder: "Input  name or description" %></div>
+        <div class="actions">
+        <%= f.submit "Search" %>
+        </div>
+      </div>
+    <% end %>
+
 <%= will_paginate %>
 
 <ul class="group ">
-  <% @group.each do |group| %>
+  <% @groups.each do |group| %>
     <%= render group %>
 
   <% end %>

@@ -14,4 +14,7 @@
  *= require_self
  *= require bootstrap-social
  *= require rails_bootstrap_forms
+ *= require bootstrap
+ *= require bootstrap-datetimepicker
+ *= require bootstrap-datepicker
  */

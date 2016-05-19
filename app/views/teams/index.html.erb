@@ -4,15 +4,14 @@
       <div id="search_team">
         <div id="search-input">
         <%= f.label :name_cont, "Name Or Description  "%>
-        <%= f.text_field :description_or_name_cont, placeholder: "Input teams name or description" %></div>
+        <%= f.text_field :description_or_name_cont, placeholder: "Input teams name or description" %>
+        </div>
         <div class="search_county">
         <%= f.label :county_matches, "County "%>
         <%= f.text_field :county_matches, placeholder: "input exactly name county..." %>
         </div>
-        <div class="actions">
-        <%= f.submit "Search" %>
-        </div>
       </div>
+      <div class="actions"><%= f.submit "Search" %></div>
     <% end %>
 
 <%= will_paginate %>

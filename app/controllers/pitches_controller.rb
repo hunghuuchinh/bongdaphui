@@ -18,15 +18,11 @@ class PitchesController < ApplicationController
   end
 
   def new
-    unless current_user.team.present?
     @pitch = Pitch.new
-  else
-    flash[:danger] = "You can not create more than 1 pitch "
-    redirect_to root_url
   end
-  end
+
   def create
-    @pitch = current_user.build_pitch(pitch_params)
+    @pitch = current_user.pitch.create(pitch_params)
       if @pitch.save
             flash[:success] = "pitch created"
           redirect_to root_url
