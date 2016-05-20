@@ -23,3 +23,4 @@
 //= require jquery.raty
 //= require ratyrate
 //= require bootstrap-datepicker
+//= require bootstrap-material-design
