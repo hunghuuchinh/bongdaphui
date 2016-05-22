@@ -1,0 +1,4 @@
+<h4 style="text-align:center">My Pitch List</h4>
+  <% current_user.pitches.each do |pitch| %>
+    <li style="text-align:center"><%= link_to pitch.name, pitch %></li>
+  <% end %>

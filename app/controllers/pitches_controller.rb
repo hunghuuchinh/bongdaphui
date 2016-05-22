@@ -30,8 +30,19 @@ class PitchesController < ApplicationController
        render 'new'
       end
   end
-  def edit
 
+  def edit
+     @pitch = Pitch.find(params[:id])
+  end
+
+  def update
+    @pitch = Pitch.find(params[:id])
+    if @pitch.update_attributes(pitch_params)
+      flash[:success] = "Thong tin Da duoc update"
+      redirect_to root_url
+    else
+      render 'edit'
+    end
   end
 
   def destroy

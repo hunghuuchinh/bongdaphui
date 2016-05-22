@@ -41,8 +41,23 @@
 </table>
   </div>
   <div class="col-md-8">
+    <%= search_form_for @searchs, url: child_pitch_path(@child_pitch) do |f| %>
+      <div class="col-md-12 ">
+        <div class="search_email">
+          <%= f.label :date_order_cont, "Order date"%>
+          <%= f.text_field :date_order_cont, class: "date datepicker" %>
+          <div class="actions"><%= f.submit "Search" %></div>
+        </div>
+      </div>
 
+    <% end %>
+    <% @orders.each do |order| %>
+      <%= order.id %>
+      <%= order.date_order %>
+      <br>
+    <% end %>
   </div>
+
   <div class="col-md-2">
     <%= form_for Order.new do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
@@ -62,15 +77,13 @@
          <%= f.label :time %>
         <%= f.select :time, options_for_select([['Time 1','Time 1'],['Time 2','Time 2'],['Time 3','Time 3'],
           ['Time 4','Time 4'],['Time 5','Time 5'],['Time 6','Time 6'],['Time 7','Time 7'],['Time 8','Time 8'],]) %>
-
          <%= f.label :date_order %>
          <%= f.text_field :date_order,  class: 'form-control input-group date datepicker'  %>
 
         <script type="text/javascript">
             $(function () {
                 $('.datepicker').datepicker({
-                   dateFormat : "yy MM dd",
-                    // locale: 'ru'
+                  format: "yyyy/mm/dd"
                 });
             });
         </script>
