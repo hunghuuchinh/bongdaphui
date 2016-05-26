@@ -8,4 +8,17 @@
   <span class ="glyphicon glyphicon-phone"></span>
   <%= @user.phone %></br>
   </div>
+  <div class="col-md-6 col-md-offset-3">
+   <h1>Order Logs</h1>
+     <% @orders.each do |order| %>
+       Child_Pitch_Id : <%= order.child_pitch_id %></br>
+       Order Id : <%= order.id %></br>
+       Kit quantity Order : <%= order.kit %></br>
+       Ball quantity Order : <%= order.ball %> </br>
+       Shoes quantity Order : <%= order.shoes %></br>
+       Create at <%= order.created_at %> </br>
+       Update  at <%= order.updated_at %> </br>
+       Order Status <p style="font-weight: bold"; ><%= order.status %></p>
+     <% end %>
+  </div>
 </div>

@@ -27,8 +27,6 @@ class OrdersController < ApplicationController
   def index
     @pitches = current_user.pitches
 
-
-
   end
 
   private

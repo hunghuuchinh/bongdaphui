@@ -17,17 +17,13 @@
 //= require_tree .
 //= require underscore
 //= require gmaps/google
-
-//= require best_in_place
-//= require best_in_place.purr
 //= require jquery.purr
-
+//= require best_in_place
 //= require jquery.raty
 //= require ratyrate
 //= require bootstrap-datepicker
 //= require bootstrap-material-design
-//= require jquery-ui
-//= require best_in_place.jquery-ui
+
 $(document).ready(function() {
   jQuery(".best_in_place").best_in_place();
 });
