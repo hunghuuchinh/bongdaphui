@@ -5,6 +5,7 @@ class ChildPitchesController < ApplicationController
     @child_pitch_id = @child_pitch.id
     @searchs = @child_pitch.orders.search(params[:q])
     @orders = @searchs.result
+    @pitch = @child_pitch.pitch
   end
 
 end

@@ -1,0 +1,28 @@
+ <h1>Orders</h1>
+
+
+<%- @pitches.each do |pitch| %>
+  <h2>List Pitch User Manager</h2>
+  <%- pitch.child_pitches.each do |child_pitch| %>
+    <h3>List Child Pitch </h3>
+    <%- child_pitch.orders.each do |order| %>
+    <div class="col-md-12">
+      <div class="col-md-4 order_details" >
+      Order Id : <%= order.id %> </br>
+      User Id : <%= order.user_id %></br>
+      User Phone : <%= order.phone %></br>
+      Order Time : <%= order.time %></br>
+      Order Date :<%= order.date_order %></br>
+      Kit quantity Order : <%= order.kit %></br>
+      Ball quantity Order : <%= order.ball %> </br>
+      Shoes quantity Order : <%= order.shoes %></br>
+      Order Status :
+      <%= best_in_place order, :status, type: :select, collection: [["non_active", "non_active"], ["actived", "actived"] , ["close", "close"]] %>
+
+
+    <p>----------------------------------------</p>
+    </div>
+    </div>
+    <%end%>
+  <%end%>
+<%end%>

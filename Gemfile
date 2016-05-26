@@ -17,6 +17,8 @@ gem 'ratyrate'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 gem 'bootstrap-datepicker-rails'
+gem 'bootstrap-material-design'
+gem 'best_in_place'
 
 gem 'acts-as-taggable-on'
 gem 'rails',        '4.2.2'

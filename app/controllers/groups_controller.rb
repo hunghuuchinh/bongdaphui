@@ -43,7 +43,7 @@ class GroupsController < ApplicationController
     @team = current_user.team
   end
 
-    def update
+  def update
     unless params[:confirm]
       if @group.update_attributes group_params
         flash[:success] = "Edited success"

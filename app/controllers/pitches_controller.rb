@@ -22,7 +22,7 @@ class PitchesController < ApplicationController
   end
 
   def create
-    @pitch = current_user.pitch.create(pitch_params)
+    @pitch = current_user.pitches.create(pitch_params)
       if @pitch.save
             flash[:success] = "pitch created"
           redirect_to root_url

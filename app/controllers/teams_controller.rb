@@ -9,7 +9,7 @@ class TeamsController < ApplicationController
   end
 
   def create
-    @team = current_user.team.create(team_params)
+    @team = current_user.teams.create(team_params)
       if @team.save
             flash[:success] = "Team created"
           redirect_to root_url

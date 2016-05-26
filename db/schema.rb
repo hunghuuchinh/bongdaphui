@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160520090943) do
+ActiveRecord::Schema.define(version: 20160524082306) do
 
   create_table "average_caches", force: :cascade do |t|
     t.integer  "rater_id"
@@ -69,9 +69,13 @@ ActiveRecord::Schema.define(version: 20160520090943) do
     t.date     "date_order"
     t.integer  "user_id"
     t.integer  "child_pitch_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.string   "status"
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.string   "status",         default: "non_active"
+    t.integer  "kit"
+    t.integer  "ball"
+    t.integer  "shoes"
+    t.string   "phone"
   end
 
   add_index "orders", ["child_pitch_id"], name: "index_orders_on_child_pitch_id"

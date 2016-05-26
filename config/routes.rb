@@ -24,7 +24,11 @@ Rails.application.routes.draw do
       put "unlike", to: "statuses#unlike"
     end
   end
-  resources :orders
+  resources :orders do
+    collection do
+      get :change_status
+    end
+  end
   resources :comments
   resources :microposts
 end
