@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   #post '/rate' => 'rater#create', :as => 'rate'
   post '/rate' => 'rater#create', :as => 'rate'
    # mount Soulmate::Server, :at => "/autocomplete"

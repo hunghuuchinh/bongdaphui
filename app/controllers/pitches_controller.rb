@@ -4,6 +4,7 @@ class PitchesController < ApplicationController
     @search = Pitch.search(params[:q])
     @search.sorts = 'rating desc'
     @pitches = @search.result.paginate(:page => params[:page], :per_page => 9)
+    @map_pitches = Pitch.all
     # @pitches = Pitch.paginate(:page => params[:page], :per_page => 30)
   end
 

@@ -22,11 +22,11 @@ function loadScript()
 {
   var script = document.createElement("script");
   script.type = "text/javascript";
-  script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyD3LW0eFL2kZufMOHkVmdB69EiTSogACxc&sensor=false&callback=initialize";
-  document.body.appendChild(script);
+  //script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyD3LW0eFL2kZufMOHkVmdB69EiTSogACxc";
+ // document.body.appendChild(script);
 }
 
-window.onload = loadScript;
+// window.onload = loadScript;
 $(document).bind("projectLoadComplete", initialize);
 
 function getLocation() {

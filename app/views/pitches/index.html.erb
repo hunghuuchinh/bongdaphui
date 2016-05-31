@@ -57,6 +57,11 @@
       <div class="actions"><%= f.submit "Search" %></div>
     <% end %>
 
+<div id="map-container">
+  <div id="map-search" data-pitches="<%= @map_pitches.to_json %>">
+  </div>
+</div>
+
 <%= will_paginate %>
 
 <ul class="pitches">

@@ -16,14 +16,27 @@
 //= require bootstrap
 //= require_tree .
 //= require underscore
-//= require gmaps/google
 //= require jquery.purr
 //= require best_in_place
 //= require jquery.raty
 //= require ratyrate
+//= require search_map
 //= require bootstrap-datepicker
 //= require bootstrap-material-design
+//= require ckeditor/init
 
 $(document).ready(function() {
   jQuery(".best_in_place").best_in_place();
+});
+
+$(document).on("page:load page:change", function(){
+  if($("#map-container").length > 0) {
+    search_map();
+  }
+  else if($('#googleMap').length > 0){
+    initialize();
+  }
+  else {
+    return ;
+  }
 });

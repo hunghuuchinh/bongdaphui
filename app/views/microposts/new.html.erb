@@ -3,7 +3,7 @@
   <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title, placeholder: "title name " %></br>
-    <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+    <%= f.text_area :content, class: "ckeditor", placeholder: "Compose new micropost..." %>
     <span class="picture">
     <%= f.file_field :picture_micropost, accept: 'image/jpeg,image/gif,image/png' %>
   </span>
@@ -19,4 +19,15 @@
       alert('Maximum file size is 5MB. Please choose a smaller file.');
     }
   });
+
+  $(document).ready(function(){
+  if ($('textarea').length > 0) {
+    var data = $('.ckeditor');
+    $.each(data, function(i) {
+      CKEDITOR.replace(data[i].id)
+    });
+  }
+});
 </script>
+
+
