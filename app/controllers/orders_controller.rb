@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
     @order = Order.find params[:id]
     @order.update_attributes order_params
     respond_with @order
-     #binding.pry
+    #binding.pry
   end
 
   def create

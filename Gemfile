@@ -37,7 +37,6 @@ gem "cancancan"
 gem 'omniauth-facebook'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'public_activity'
-gem 'best_in_place'
 gem "whenever", require: false
 gem "jquery-atwho-rails"
 gem "paperclip", "~> 4.3"

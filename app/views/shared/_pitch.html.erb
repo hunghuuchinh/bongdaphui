@@ -1,4 +1,8 @@
 <h4 style="text-align:center">My Pitch List</h4>
-  <% current_user.pitch.each do |pitch| %>
+  <% if current_user.pitches.count != 0 %>
+  <% current_user.pitches.each do |pitch| %>
     <li style="text-align:center"><%= link_to pitch.name, edit_pitch_path(pitch) %></li>
+  <% end %>
+  <% else %>
+    <li>you dont have any pitch</li>
   <% end %>

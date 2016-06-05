@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
   #before_action :correct_user,   only: [:edit, :update]
-  before_action :admin_user,  only: :destroy
+  before_action :admin_user,  only: [:destroy , :edit, :update ]
 
   def index
       @search = User.search(params[:q])
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Chao Mung den voi Bong Da Phui!"
+      flash[:success] = "Welcome to Bong Da Phui Ha Noi!"
       redirect_to @user
     else
       render 'new'
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      flash[:success] = "Thong tin Da duoc update"
+      flash[:success] = "Information is updated"
       redirect_to @user
     else
       render 'edit'
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
 
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] ="Xoa Thanh Cong"
+    flash[:success] ="Deleted success"
     redirect_to users_url
   end
 

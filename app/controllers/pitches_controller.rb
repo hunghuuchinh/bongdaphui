@@ -5,6 +5,9 @@ class PitchesController < ApplicationController
     @search.sorts = 'rating desc'
     @pitches = @search.result.paginate(:page => params[:page], :per_page => 9)
     @map_pitches = Pitch.all
+    if @pitches.count == 0
+        flash[:danger] = "no suitable for your search"
+    end
     # @pitches = Pitch.paginate(:page => params[:page], :per_page => 30)
   end
 

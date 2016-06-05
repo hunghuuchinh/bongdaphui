@@ -16,8 +16,9 @@
 //= require bootstrap
 //= require_tree .
 //= require underscore
-//= require jquery.purr
 //= require best_in_place
+//= require best_in_place.purr
+//= require jquery.purr
 //= require jquery.raty
 //= require ratyrate
 //= require search_map
@@ -27,16 +28,4 @@
 
 $(document).ready(function() {
   jQuery(".best_in_place").best_in_place();
-});
-
-$(document).on("page:load page:change", function(){
-  if($("#map-container").length > 0) {
-    search_map();
-  }
-  else if($('#googleMap').length > 0){
-    initialize();
-  }
-  else {
-    return ;
-  }
 });
