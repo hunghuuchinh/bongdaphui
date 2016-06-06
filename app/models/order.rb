@@ -3,7 +3,8 @@ class Order < ActiveRecord::Base
   belongs_to :pitch
   validates :date_order, presence: true
   validate :check_date_order_1
-  validate :check_date_order
+  validate :check_date_order, :on => :create
+  default_scope -> { order(created_at: :desc) }
 
 
   private

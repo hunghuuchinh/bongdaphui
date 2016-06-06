@@ -5,10 +5,10 @@ class OrdersController < ApplicationController
   end
 
   def update
-     @order = Order.find params[:id]
-     @order.update_attributes order_params
-     respond_with @order
-     #binding.pry
+    @order = Order.find params[:id]
+    @order.update_attributes order_params
+    respond_with @order
+    #binding.pry
   end
 
   def create
@@ -26,7 +26,6 @@ class OrdersController < ApplicationController
 
   def index
     @pitches = current_user.pitches
-
   end
 
   private

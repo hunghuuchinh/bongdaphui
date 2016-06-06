@@ -4,6 +4,9 @@ class GroupsController < ApplicationController
   def index
     @search = Group.ransack(params[:q])
     @groups = @search.result.paginate(:page => params[:page], :per_page => 9)
+    if @groups.count == 0
+        flash[:danger] = "no suitable for your search"
+    end
   end
   def new
     @group = Group.new
@@ -40,7 +43,7 @@ class GroupsController < ApplicationController
     end
   end
   def edit
-    @team = current_user.team
+    @user = Group.find(params[:id])
   end
 
   def update

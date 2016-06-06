@@ -69,7 +69,7 @@ $(document).ready(function(){
 })
 
 
-/*$(document).on("page:change page:load", function(){
+$(document).on("page:change page:load", function(){
 
   if($("#googleMap").length > 0) {
     initialize();
@@ -78,4 +78,4 @@ $(document).ready(function(){
     return;
   }
 });
-*/
+

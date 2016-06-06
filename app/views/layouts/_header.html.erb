@@ -47,11 +47,12 @@
               <li><%= link_to "Create Pitch", new_pitch_path%></li>
               <li><%= link_to "Search Pitch", pitches_path %></li>
               <li><%= link_to "manage Order", orders_path %></li>
+              <li><%= render 'shared/pitch' %></li>
             </ul>
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Account <b class="caret"></b>
+             <%= current_user.name %> <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to "Profile", current_user %></li>
@@ -76,12 +77,13 @@
               <li><%= link_to "Create Pitch", new_pitch_path%></li>
               <li><%= link_to "Search Pitch", pitches_path  %></li>
               <li><%= link_to "Manage Order", orders_path   %></li>
+              <li><%= render 'shared/pitch' %></li>
 
             </ul>
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Account <b class="caret"></b>
+               <%= current_user.name %><b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to "Profile", current_user %></li>
@@ -118,7 +120,7 @@
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Account <b class="caret"></b>
+              <%= current_user.name %> <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to "Profile", current_user %></li>
@@ -133,12 +135,11 @@
 
           <%-# normal -%>
           <%  elsif logged_in? && current_user.role =="normal" %>
-          <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "View News", microposts_path %></li>
           <li><%= link_to "Search Team", teams_path %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-             Group Manage <b class="caret"></b>
+              Groups <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to "Search Group", groups_path %></li>
@@ -148,7 +149,7 @@
           <li><%= link_to "Search Pitch", pitches_path %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Account <b class="caret"></b>
+               <%= current_user.name %> <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to "Profile", current_user %></li>

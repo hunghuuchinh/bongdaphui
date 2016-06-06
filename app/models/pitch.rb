@@ -11,6 +11,7 @@ class Pitch < ActiveRecord::Base
   validates :rent_shoes , inclusion: {in: [true, false]}
   validates :rent_kit , inclusion: {in: [true, false]}
   validates :rent_ball, inclusion: {in: [true, false]}
+  validates :have_lamp, inclusion: {in: [true, false]}
   validates :description, presence: true
   validates :cost ,  numericality: true , presence: true
 

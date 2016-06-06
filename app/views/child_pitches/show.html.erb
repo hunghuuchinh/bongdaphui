@@ -46,22 +46,28 @@
         <div class="search_email">
           <%= f.label :date_order_cont, "Order date"%>
           <%= f.text_field :date_order_cont, class: "date datepicker" %>
-          <div class="actions"><%= f.submit "Search" %></div>
+          <div class="actions" style="margin-top: 20px; margin-bottom: 20px;"><%= f.submit "Search" %></div>
         </div>
       </div>
 
     <% end %>
     <% @orders.each do |order| %>
-   Order Id : <%= order.id %> </br>
-   User Id : <%= order.user_id %></br>
-   User Phone : <%= order.phone %></br>
-   Order Time : <%= order.time %></br>
-   Order Date :<%= order.date_order %></br>
-   Kit quantity Order : <%= order.kit %></br>
-   Ball quantity Order : <%= order.ball %> </br>
-   Shoes quantity Order : <%= order.shoes %></br>
-   Order Status :<p style="font-weight: bold;"><%= order.status %><p>
-   <p>----------------------------------------</p>
+   <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Order Time</th>
+        <th>Order Date</th>
+        <th>Order Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= order.time %></td>
+        <td><%= order.date_order %></td>
+        <td><%= order.status %></td>
+    </tbody>
+  </table>
+
     <% end %>
   </div>
 

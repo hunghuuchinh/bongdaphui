@@ -17,6 +17,7 @@
  *= require bootstrap
  *= require bootstrap-datetimepicker
  *= require bootstrap-datepicker
+ *= require search_map
  */
 
 .navbar-fixed-bottom {

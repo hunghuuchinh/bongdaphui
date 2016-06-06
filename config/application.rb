@@ -24,4 +24,8 @@ module Bongdaphui
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
   end
+
+  class Application < Rails::Application
+  config.time_zone = 'Asia/Bangkok'
+  end
 end

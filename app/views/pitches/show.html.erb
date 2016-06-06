@@ -37,10 +37,13 @@
   <div id="googleMap" style="height:400px;"></div>
  <div class="col-md-6 col-md-offset-3" style="text-align:center;">
    <h2>Order Child Pitch </h2>
+   <% if current_user.role =="manage_team" %>
    <%- @pitch.child_pitches.each do |child_pitch| %>
      child_pitch  <%= child_pitch.id %>&nbsp;&nbsp;&nbsp;|
     <%= link_to "order", child_pitch_path(child_pitch) %>
     </br>
+  <% end %>
+  <% else %>
   <% end %>
  </div>
  </div>
