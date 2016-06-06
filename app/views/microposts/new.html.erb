@@ -3,9 +3,10 @@
   <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title, placeholder: "title name " %></br>
+    <%= f.label :content %>
     <%= f.text_area :content, class: "ckeditor", placeholder: "Compose new micropost..." %>
   </div>
-  <%= f.submit "Post", class: "btn btn-primary" %>
+  <%= f.submit "Post", class: "btn btn-primary micropost-btn" %>
 
 <% end %>
 

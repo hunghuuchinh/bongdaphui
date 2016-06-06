@@ -21,10 +21,10 @@
 //= require jquery.purr
 //= require jquery.raty
 //= require ratyrate
-//= require search_map
 //= require bootstrap-datepicker
 //= require bootstrap-material-design
 //= require ckeditor/init
+
 
 $(document).ready(function() {
   jQuery(".best_in_place").best_in_place();
